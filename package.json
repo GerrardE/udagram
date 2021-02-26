@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "start:api:dev": "cd udagram-api && npm run dev",
+        "start:api:prod": "cd udagram-api && npm run prod",
+        "build:frontend": "cd udagram-frontend && npm run build",
+        "start:frontend": "cd udagram-frontend && npm run start",
+        "test:frontend": "cd udagram-frontend && npm t",
+        "test:e2e:frontend": "cd udagram-frontend && npm run e2e"
+    },
+    "devDependencies": {},
+    "dependencies": {}
+}
