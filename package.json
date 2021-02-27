@@ -1,9 +1,12 @@
 {
     "scripts": {
         "start:api:dev": "cd udagram-api && npm run dev",
-        "start:api:prod": "cd udagram-api && npm run prod",
+        "install:api": "cd udagram-api && npm i",
+        "build:api": "cd udagram-api && npm run build",
+        "start:api": "cd udagram-api && npm start",
+        "install:frontend": "cd udagram-frontend && npm i",
         "build:frontend": "cd udagram-frontend && npm run build",
-        "start:frontend": "cd udagram-frontend && npm run start",
+        "start:frontend": "cd udagram-frontend && npm start",
         "test:frontend": "cd udagram-frontend && npm t",
         "test:e2e:frontend": "cd udagram-frontend && npm run e2e"
     },
