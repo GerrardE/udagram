@@ -1,0 +1,39 @@
+version: 2.1 # use CircleCI 2.1
+
+defaults: &defaults
+  working_directory: ~/udagram
+  
+orbs:
+  node: circleci/node@4.1.0
+
+jobs: # a collection of steps
+  build: # runs not using Workflows must have a `build` job as entry point
+    <<: *defaults
+    docker:
+      - image: "cimg/base:stable"
+    steps: 
+      - checkout # special step to check out source code to working directory
+
+      # API RUNS
+      - run:
+          name: install-backend-dependencies
+          command: npm run install:api
+      - run:
+          name: build-api
+          command: npm run build:api
+      
+      # FRONTEND RUNS
+      - run:
+          name: install-frontend-dependencies
+          command: npm run install:frontend
+      - run: # run tests
+          name: test-frontend
+          command: npm run test:frontend
+      - run: # run build
+          name: build-frontend
+          command: npm run build:frontend
+
+workflows:
+  build:
+    jobs:
+      - build
