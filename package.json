@@ -3,12 +3,15 @@
         "start:api:dev": "cd udagram-api && npm run dev",
         "install:api": "cd udagram-api && npm i",
         "build:api": "cd udagram-api && npm run build",
+        "deploy:api": "cd udagram-api && npm run deploy",
         "start:api": "cd udagram-api && npm start",
         "install:frontend": "cd udagram-frontend && npm i",
         "build:frontend": "cd udagram-frontend && npm run build",
+        "deploy:frontend": "cd udagram-frontend && npm run deploy",
         "start:frontend": "cd udagram-frontend && npm start",
         "test:frontend": "cd udagram-frontend && npm t",
-        "test:e2e:frontend": "cd udagram-frontend && npm run e2e"
+        "test:e2e:frontend": "cd udagram-frontend && npm run e2e",
+        "deploy": "npm run deploy:api && npm run deploy:frontend"
     },
     "devDependencies": {},
     "dependencies": {}

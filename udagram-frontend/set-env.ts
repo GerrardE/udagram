@@ -12,7 +12,7 @@ dotenv.config();
 
 // `environment.ts` file structure
 const envConfigFile = `export const environment = {
-  production: ${false},
+  production: ${process.env.NODE_ENV},
   appName: 'Udagram',
   apiHost: '${process.env.API_HOST}'
 };

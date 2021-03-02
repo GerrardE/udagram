@@ -2,9 +2,27 @@ version: 2.1 # use CircleCI 2.1
 
 defaults: &defaults
   working_directory: ~/udagram
+  environment: 
+    API_HOST: ${API_HOST}
+    NODE_ENV: ${NODE_ENV}
+    URL: ${URL}
+    POSTGRES_USERNAME: ${POSTGRES_USERNAME}
+    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    POSTGRES_DB: ${POSTGRES_DB}
+    POSTGRES_HOST: ${POSTGRES_HOST}
+    AWS_REGION: ${AWS_REGION}
+    AWS_PROFILE: ${AWS_PROFILE}
+    AWS_BUCKET: ${AWS_BUCKET}
+    JWT_SECRET: ${JWT_SECRET}
+    PORT: ${PORT}
+    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+    AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+
   
 orbs:
   node: circleci/node@4.1.0
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+  aws-cli: circleci/aws-cli@1.3.1
 
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
@@ -27,14 +45,31 @@ jobs: # a collection of steps
       - run:
           name: install-frontend-dependencies
           command: npm run install:frontend
-      - run: # run tests
-          name: test-frontend
-          command: npm run test:frontend
       - run: # run build
           name: build-frontend
           command: npm run build:frontend
+
+  deploy:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - eb/setup
+      - aws-cli/setup
+      - checkout
+      - run:
+          name: deploy-application
+          command:
+            npm run deploy
 
 workflows:
   build:
     jobs:
       - build
+      - deploy:
+          requires:
+          - build
+          # filters:
+          #   branches:
+          #     only: 
+          #       - main
