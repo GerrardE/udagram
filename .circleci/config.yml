@@ -29,6 +29,9 @@ jobs: # a collection of steps
       - run:
           name: install-frontend-dependencies
           command: npm run install:frontend
+      - run:
+          name: setup-environment-file
+          command: npm run config:frontend
       - run: # run build
           name: build-frontend
           command: npm run build:frontend

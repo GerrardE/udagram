@@ -2,7 +2,7 @@
 const writeFile = require('fs').writeFile;
 
 // Configure Angular `environment.ts` file path
-const targetPath = './src/environments/environment.ts';
+const targetPath = 'src/environments/environment.ts';
 
 // Load node modules
 const colors = require('colors');

@@ -6,6 +6,7 @@
         "deploy:api": "cd udagram-api && npm run deploy",
         "start:api": "cd udagram-api && npm start",
         "install:frontend": "cd udagram-frontend && npm i",
+        "config:frontend": "cd udagram-frontend && npm run config",
         "build:frontend": "cd udagram-frontend && npm run build",
         "deploy:frontend": "cd udagram-frontend && npm run deploy",
         "start:frontend": "cd udagram-frontend && npm start",
