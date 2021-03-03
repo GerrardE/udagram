@@ -2,22 +2,6 @@ version: 2.1 # use CircleCI 2.1
 
 defaults: &defaults
   working_directory: ~/udagram
-  environment: 
-    API_HOST: $API_HOST
-    NODE_ENV: $NODE_ENV
-    URL: $URL
-    POSTGRES_USERNAME: $POSTGRES_USERNAME
-    POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-    POSTGRES_DB: $POSTGRES_DB
-    POSTGRES_HOST: $POSTGRES_HOST
-    AWS_REGION: $AWS_REGION
-    AWS_PROFILE: $AWS_PROFILE
-    AWS_BUCKET: $AWS_BUCKET
-    JWT_SECRET: $JWT_SECRET
-    PORT: $PORT
-    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
-    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
-
   
 orbs:
   node: circleci/node@4.1.0
