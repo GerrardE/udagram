@@ -11,6 +11,7 @@
     "test": "npm run config && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy:sh": "chmod +x bin/deploy.sh && bin/deploy.sh",
     "deploy": "npm i && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh"
   },
   "private": true,
