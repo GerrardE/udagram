@@ -7,13 +7,12 @@
     "ng": "ng",
     "config": "ts-node set-env.ts",
     "start": "npm run config && ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href ./ --prod",
     "test": "npm run config && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy:sh": "chmod +x bin/deploy.sh && bin/deploy.sh",
-    "deploy": "npm i && npm run config && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh",
-    "post:deploy": "aws s3 mv s3://udagram-s3/udagram-frontend/ s3://udagram-s3 --recursive"
+    "deploy": "npm i && npm run config && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh"
   },
   "private": true,
   "dependencies": {

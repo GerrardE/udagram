@@ -9,7 +9,6 @@
         "config:frontend": "cd udagram-frontend && npm run config",
         "build:frontend": "cd udagram-frontend && npm run build",
         "deploy:frontend": "cd udagram-frontend && npm run deploy",
-        "post:deploy:frontend": "cd udagram-frontend && npm run post:deploy",
         "start:frontend": "cd udagram-frontend && npm start",
         "test:frontend": "cd udagram-frontend && npm t",
         "test:e2e:frontend": "cd udagram-frontend && npm run e2e",

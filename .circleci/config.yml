@@ -36,6 +36,7 @@ jobs: # a collection of steps
           name: build-frontend
           command: npm run build:frontend
 
+  # deploy the application to live environment
   deploy:
     docker:
       - image: "cimg/base:stable"
@@ -46,13 +47,8 @@ jobs: # a collection of steps
       - checkout
       - run:
           name: deploy-application
-          command: 
+          command:
             npm run deploy
-      - run:
-          name: post-deploy
-          command: 
-            npm run post:deploy:frontend
-            
 
 workflows:
   build:
