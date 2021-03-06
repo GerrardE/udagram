@@ -45,6 +45,9 @@ jobs: # a collection of steps
       - aws-cli/setup
       - checkout
       - run:
+          name: setup-environment-file
+          command: npm run config:frontend
+      - run:
           name: deploy-application
           command:
             npm run deploy
