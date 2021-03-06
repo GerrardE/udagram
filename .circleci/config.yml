@@ -46,9 +46,13 @@ jobs: # a collection of steps
       - checkout
       - run:
           name: deploy-application
-          command: |
+          command: 
             npm run deploy
+      - run:
+          name: post-deploy
+          command: 
             npm run post:deploy:frontend
+            
 
 workflows:
   build:
