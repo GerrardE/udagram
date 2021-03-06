@@ -1,0 +1,10 @@
+node_modules
+src
+mock
+.dockerignore
+.env
+.eslintrc.json
+www/udagrap-api.zip
+.gitignore
+tsconfig.json
+tslint.json
